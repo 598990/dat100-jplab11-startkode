@@ -6,38 +6,72 @@ import no.hvl.dat100.jplab11.oppgave1.*;
 public class Tekst extends Innlegg {
 
 	// TODO: objektvariable 
+	private String tekst;
 	
 	public Tekst () {
-		
+		tekst = "";
 	}
 	
 	public Tekst(int id, String bruker, String dato, String tekst) {
-		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
+		
+		super(id, bruker, dato);
+		this.tekst = tekst;
+		
+		//throw new UnsupportedOperationException(TODO.constructor("Tekst"));
 	}
 	
 	public Tekst(int id, String bruker, String dato, int likes, String tekst) {
-		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
+		
+		super(id, bruker, dato, likes);
+		this.tekst = tekst;
+		
+		//throw new UnsupportedOperationException(TODO.constructor("Tekst"));
+		
 	}
 	
 	public String getTekst() {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		return tekst;
+		
+		//throw new UnsupportedOperationException(TODO.method());
 
 	}
 
+	@Override
 	public void setTekst(String tekst) {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		this.tekst = tekst;
+		
+		//throw new UnsupportedOperationException(TODO.method());
 	}
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		return "TEKST" + "\n" + super.toString() + tekst + "\n";
+		
+		//throw new UnsupportedOperationException(TODO.method());
 
+	}
+	
+	public String getUrl() {
+		return "";
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
 			
-		throw new UnsupportedOperationException(TODO.method());
+		StringBuilder bygger = new StringBuilder();
+		bygger.append("<h2>" + super.getBruker() + " " + super.getDato() + " " + super.getId() + "</h2>");
+		bygger.append("<p>" + getTekst() + "</p>");
+		
+		return bygger.toString();
+		//throw new UnsupportedOperationException(TODO.method());
 				
+	}
+
+	public void setUrl(String url) {
+		// TODO Auto-generated method stub
+		
 	}
 }
